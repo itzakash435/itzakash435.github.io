@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://itzakash435.github.io/sitemap.xml
