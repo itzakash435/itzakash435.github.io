@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09090b">
+<title>Akash Ahmed — Graphic Designer & Video Editor</title>
+<meta name="description" content="Akash Ahmed — Graphic Designer & Video Editor creating modern social media designs, branding and engaging visual content.">
+<style>
+:root{
+  --bg:#08080a;--panel:#101014;--panel2:#15151a;--text:#f7f7f8;--muted:#9898a4;
+  --line:rgba(255,255,255,.10);--accent:#b8ff3d;--accent2:#d9ff8c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  line-height:1.6;overflow-x:hidden
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(circle at 75% 8%,rgba(184,255,61,.10),transparent 24%),
+             radial-gradient(circle at 8% 55%,rgba(255,255,255,.05),transparent 20%)
+}
+body:after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:70px 70px;mask-image:linear-gradient(to bottom,black,transparent 85%)
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,92%);margin:auto}
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:100;
+  background:rgba(8,8,10,.72);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line)
+}
+.nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:13px;font-weight:900;letter-spacing:4px}
+.nav-links{display:flex;gap:28px;color:#aaaab4;font-size:13px}
+.nav-links a{transition:.25s}.nav-links a:hover{color:var(--accent)}
+.hero{min-height:100vh;padding:130px 0 70px;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:75px;align-items:center}
+.badge{
+  display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid var(--line);
+  border-radius:999px;color:#c5c5cc;background:rgba(255,255,255,.03);font-size:11px;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:25px
+}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent)}
+h1{font-size:clamp(55px,8.7vw,112px);line-height:.88;letter-spacing:-6px;margin-bottom:28px}
+h1 .lime{
+  color:var(--accent);
+  text-shadow:0 0 45px rgba(184,255,61,.13)
+}
+.hero-copy{max-width:620px;color:var(--muted);font-size:18px;margin-bottom:34px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:48px;padding:0 20px;border-radius:12px;border:1px solid var(--line);
+  font-size:13px;font-weight:800;transition:.3s
+}
+.btn.primary{background:var(--accent);color:#0a0a0b;border-color:var(--accent)}
+.btn:hover{transform:translateY(-3px);border-color:var(--accent)}
+.hero-card{position:relative}
+.portrait{
+  height:590px;border:1px solid var(--line);border-radius:32px;overflow:hidden;
+  background:var(--panel);position:relative;box-shadow:0 35px 100px rgba(0,0,0,.55);
+  transform:rotate(1.2deg)
+}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.04) saturate(.95)}
+.portrait:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.55)),
+             linear-gradient(135deg,rgba(184,255,61,.08),transparent 35%)
+}
+.float-tag{
+  position:absolute;z-index:3;bottom:28px;left:-24px;padding:14px 17px;
+  border:1px solid var(--line);border-radius:14px;background:rgba(15,15,18,.85);
+  backdrop-filter:blur(16px);font-size:12px;color:#d5d5db
+}
+.float-tag b{display:block;color:var(--accent);font-size:18px;line-height:1.1}
+section{padding:110px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}
+.kicker{color:var(--accent);font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-size:clamp(40px,6vw,68px);line-height:.95;letter-spacing:-4px}
+.section-sub{max-width:530px;color:var(--muted);font-size:15px}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}
+.about-text{font-size:20px;color:#c5c5cc;max-width:700px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{padding:25px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+.stat strong{display:block;font-size:30px;color:var(--accent);line-height:1.1}.stat span{color:var(--muted);font-size:12px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.service{
+  min-height:220px;padding:25px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#151519,#0d0d10);
+  transition:.35s;position:relative;overflow:hidden
+}
+.service:hover{transform:translateY(-7px);border-color:rgba(184,255,61,.45)}
+.service-num{font-size:11px;color:#6e6e78;letter-spacing:2px}
+.service h3{margin-top:65px;font-size:20px}.service p{color:var(--muted);font-size:13px;margin-top:7px}
+.service:after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;right:-50px;top:-50px;background:rgba(184,255,61,.08);filter:blur(12px)}
+.work-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:15px}
+.work-card{
+  min-height:330px;border:1px solid var(--line);border-radius:22px;overflow:hidden;position:relative;
+  background:var(--panel);transition:.35s
+}
+.work-card:hover{transform:translateY(-6px);border-color:rgba(184,255,61,.45)}
+.work-card img{width:100%;height:100%;object-fit:cover;display:block}
+.work-card .overlay{
+  position:absolute;inset:auto 0 0;padding:28px;
+  background:linear-gradient(transparent,rgba(0,0,0,.9))
+}
+.work-card h3{font-size:25px}.work-card p{color:#aaaab3;font-size:13px}
+.work-side{display:grid;gap:15px}
+.work-side .work-card{min-height:157px;padding:25px;background:linear-gradient(145deg,#151519,#0d0d10)}
+.work-side .work-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(184,255,61,.10),transparent 35%)}
+.work-side .overlay{padding:22px}
+.process{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{padding:30px;border-top:1px solid #33333a}.step b{font-size:12px;color:var(--accent);letter-spacing:2px}.step h3{margin:12px 0 6px}.step p{color:var(--muted);font-size:13px}
+.contact{
+  padding:85px 35px;border:1px solid var(--line);border-radius:28px;text-align:center;
+  background:radial-gradient(circle at 50% 0%,rgba(184,255,61,.12),transparent 45%),var(--panel)
+}
+.contact h2{font-size:clamp(42px,6vw,72px);line-height:.95;letter-spacing:-4px}
+.contact p{color:var(--muted);margin:15px auto 30px;max-width:560px}
+footer{padding:28px 0;border-top:1px solid var(--line);color:#666670;font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:900px){
+  .hero-grid,.about-grid,.work-grid{grid-template-columns:1fr}.portrait{height:500px;order:-1}
+  .services{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr}
+  .section-head{display:block}.section-sub{margin-top:18px}
+}
+@media(max-width:620px){
+  .nav-links{gap:11px;font-size:10px}.logo{font-size:11px;letter-spacing:2px}
+  h1{letter-spacing:-4px}.portrait{height:430px}.float-tag{left:12px}
+  .services,.stats{grid-template-columns:1fr}.about-text{font-size:17px}
+  section{padding:80px 0}.footer-inner{display:block}.footer-inner span{display:block;margin-top:8px}
+}
+</style>
+
+<style>
+.website-design-section{padding:90px 20px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(184,255,61,.03),rgba(0,0,0,0));}
+.wd-wrap{max-width:1120px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.wd-kicker{font-size:12px;font-weight:800;letter-spacing:2.5px;color:#b8ff3d}
+.wd-copy h2{font-size:clamp(34px,5vw,60px);line-height:1.02;margin:14px 0 20px}
+.wd-copy h2 span{color:#b8ff3d}
+.wd-copy p{max-width:620px;color:#a8a8a8;font-size:16px;line-height:1.8}
+.wd-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.wd-btn{display:inline-block;padding:13px 20px;border-radius:999px;text-decoration:none;font-weight:800;transition:.25s}
+.wd-primary{background:#b8ff3d;color:#080808}
+.wd-primary:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(184,255,61,.18)}
+.wd-secondary{border:1px solid rgba(255,255,255,.16);color:#fff}
+.wd-secondary:hover{border-color:#b8ff3d;color:#b8ff3d}
+.wd-card{border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:12px;background:rgba(255,255,255,.035);box-shadow:0 25px 80px rgba(0,0,0,.3);transform:rotate(1deg)}
+.wd-browser{display:flex;align-items:center;gap:12px;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.wd-dots{display:flex;gap:5px}.wd-dots i{width:7px;height:7px;border-radius:50%;background:#666;display:block}
+.wd-address{flex:1;text-align:center;font-size:11px;color:#777}
+.wd-screen{min-height:290px;padding:32px;border-radius:14px;background:linear-gradient(135deg,#151515,#090909)}
+.wd-screen-badge{font-size:10px;letter-spacing:2px;color:#b8ff3d;font-weight:800}
+.wd-screen h3{font-size:30px;max-width:340px;line-height:1.1;margin:18px 0 25px}
+.wd-lines{display:grid;gap:9px}.wd-lines span{height:7px;border-radius:10px;background:#292929}.wd-lines span:nth-child(1){width:90%}.wd-lines span:nth-child(2){width:68%}.wd-lines span:nth-child(3){width:78%}
+.wd-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px}.wd-mini-grid b{padding:14px 8px;border:1px solid #292929;border-radius:10px;text-align:center;font-size:10px;color:#aaa}
+@media(max-width:800px){.wd-wrap{grid-template-columns:1fr;gap:35px}.wd-card{transform:none}.website-design-section{padding:65px 18px}}
+</style>
+
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#">AKASH AHMED</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge"><i></i> Available for creative projects</div>
+      <h1>Design that<br><span class="lime">gets noticed.</span></h1>
+      <p class="hero-copy">I’m Akash Ahmed — a Graphic Designer & Video Editor creating clean, modern and engaging visuals for brands, businesses and social media.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#work">Explore My Work ↗</a>
+        <a class="btn" href="#contact">Let's Talk</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="portrait"><img src="FB_IMG_1787442871378.jpg" alt="Akash Ahmed"></div>
+      <div class="float-tag"><b>02+</b>Years of creative experience</div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">01 / About</div><h2 class="section-title">A creative mind<br>behind the screen.</h2></div>
+      <p class="section-sub">I focus on visuals that are simple, premium and easy to understand — with strong typography, clean layouts and modern presentation.</p>
+    </div>
+    <div class="about-grid">
+      <p class="about-text">From social media posts and promotional graphics to video edits and brand visuals, I turn ideas into content that looks professional and communicates clearly.</p>
+      <div class="stats">
+        <div class="stat"><strong>02+</strong><span>Years experience</span></div>
+        <div class="stat"><strong>4</strong><span>Core creative services</span></div>
+        <div class="stat"><strong>UAE</strong><span>Based in Sharjah</span></div>
+        <div class="stat"><strong>24/7</strong><span>Creative mindset</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">02 / Services</div><h2 class="section-title">What I can<br>create for you.</h2></div>
+      <p class="section-sub">Need content for your business or personal brand? I can build a consistent visual style across your digital presence.</p>
+    </div>
+    <div class="services">
+      <div class="service"><span class="service-num">01</span><h3>Graphic Design</h3><p>Posters, flyers, banners, logos and business materials.</p></div>
+      <div class="service"><span class="service-num">02</span><h3>Social Media</h3><p>Posts, stories, thumbnails and promotional campaigns.</p></div>
+      <div class="service"><span class="service-num">03</span><h3>Video Editing</h3><p>Reels, short-form videos and promotional edits.</p></div>
+      <div class="service"><span class="service-num">04</span><h3>Website Design</h3><p>Clean landing pages and simple business websites.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">03 / Selected Work</div><h2 class="section-title">Built to look<br>professional.</h2></div>
+      <p class="section-sub">A preview of my creative direction. More client projects can be added here as the portfolio grows.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <img src="graphic-design-project.png" alt="Graphic design project by Akash Ahmed">
+        <div class="overlay"><h3>Graphic Design</h3><p>Social media & promotional visual</p></div>
+      </div>
+      <div class="work-side">
+        <div class="work-card"><div class="overlay"><h3>Brand Design</h3><p>Clean identity & visual direction</p></div></div>
+        <div class="work-card"><div class="overlay"><h3>Video Editing</h3><p>Reels & promotional content</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">04 / Process</div><h2 class="section-title">Simple. Fast.<br>Professional.</h2></div>
+      <p class="section-sub">A straightforward workflow from your idea to the final visual.</p>
+    </div>
+    <div class="process">
+      <div class="step"><b>01 / BRIEF</b><h3>Tell me the idea</h3><p>Share your business, content type, text and references.</p></div>
+      <div class="step"><b>02 / CREATE</b><h3>I design it</h3><p>I turn your idea into a clean and modern visual.</p></div>
+      <div class="step"><b>03 / DELIVER</b><h3>Ready to publish</h3><p>You receive the finished content ready for your platform.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact">
+      <div class="kicker">05 / Contact</div>
+      <h2>Have a project<br>in mind?</h2>
+      <p>Let’s create something clean, modern and memorable. For design and video projects, connect with me on Instagram.</p>
+      <a class="btn primary" href="https://www.instagram.com/itz_aka8h/" target="_blank" rel="noopener">@itz_aka8h on Instagram ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Akash Ahmed. All rights reserved.</span>
+    <span>Graphic Designer · Video Editor · Website Designer</span>
+  </div>
+</footer>
+</body>
+</html>
